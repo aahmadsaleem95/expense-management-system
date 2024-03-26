@@ -38,7 +38,7 @@ function Header() {
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <p className="nav-link">{loginUser && loginUser.name}</p>
+                <p className="nav-link">CodeSmiths</p>
               </li>
               <li className="nav-item">
                 <p to="/user" className="nav-link active" aria-current="page">
