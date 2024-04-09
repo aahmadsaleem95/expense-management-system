@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema(
   {
+    userid: {
+      type: String,
+      required: true,
+    },
     amount: {
       type: Number,
       require: [true, "amount is required"],
@@ -19,10 +23,10 @@ const transactionSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      require: [true, "Description is required"],
+      required: [true, "Description is required"],
     },
     date: {
-      type: String,
+      type: Date,
       required: [true, "data is required"],
     },
   },
@@ -30,3 +34,4 @@ const transactionSchema = new mongoose.Schema(
 );
 
 const transactionModel = mongoose.model("transactions", transactionSchema);
+module.exports = transactionModel;
