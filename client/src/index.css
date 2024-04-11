@@ -5,7 +5,7 @@
 }
 
 .content {
-  height: 80vh;
+  height: 100vh;
 }
 
 .register-page {
@@ -24,3 +24,22 @@
   box-shadow: 0 0 3px gray;
 }
 /* transaction page */
+
+/* antd icons */
+.switch-icons {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.anticon svg {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.active-icon {
+  color: black;
+}
+.inactive-icon {
+  color: gray;
+}
