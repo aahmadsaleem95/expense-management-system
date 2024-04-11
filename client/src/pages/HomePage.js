@@ -74,7 +74,7 @@ function HomePage() {
       try {
         const user = JSON.parse(localStorage.getItem("user"));
         setLoading(true);
-        const res = await axios.post("/transactions/get-transaction", {
+        const res = await axios.post("/api/v1/transactions/get-transaction", {
           userid: user._id,
           frequency,
           selectedDate,
@@ -94,7 +94,7 @@ function HomePage() {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.delete("/transactions/delete-transaction", {
+      await axios.delete("/api/v1/transactions/delete-transaction", {
         transactionId: record._id,
       });
       setLoading(false);
@@ -113,7 +113,7 @@ function HomePage() {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (editable) {
-        await axios.post("/transactions/edit-transaction", {
+        await axios.post("/api/v1/transactions/edit-transaction", {
           payload: { ...value, userId: user._id },
           transactionId: editable._id,
         });
@@ -121,7 +121,7 @@ function HomePage() {
         setReload(!reload);
         message.success("Transaction Updated Successfully.");
       } else {
-        await axios.post("/transactions/add-transaction", {
+        await axios.post("/api/v1/transactions/add-transaction", {
           ...value,
           userid: user._id,
         });

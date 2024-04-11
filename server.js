@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const path = require("path");
 const colors = require("colors");
 const connectDb = require("./config/connectDb");
 //config dot env file
@@ -24,6 +25,12 @@ app.use("/api/v1/users", require("./routes/userRoute"));
 // transactions routes
 app.use("/api/v1/transactions", require("./routes/transactionRoute"));
 
+// static files
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 //port
 const PORT = 8080 || process.env.PORT;
 
