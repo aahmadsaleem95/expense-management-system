@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #6f4e3742;
+}
+.navbar .navbar-brand {
+  color: #6f4e37;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-link {
+  font-size: 1.2 rem;
+}
+.nav-link span {
+  padding: 3px;
+  border: 0.5px solid gray;
+  border-radius: 15px;
+}
+.navbar h6 {
+  margin-top: 7px;
+  margin-right: 20px;
+}

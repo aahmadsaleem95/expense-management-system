@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Spinner from "../components/Layout/Spinner";
+import Spinner from "../components/Spinner";
+import "../styles/LoginPage.css";
 function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const img =
+    "https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   //form submit
   const submitHandler = async (values) => {
     try {
@@ -31,21 +34,29 @@ function Login() {
   }, [navigate]);
   return (
     <>
-      <div className="register-page">
+      <div id="login-page">
         {loading && <Spinner />}
-        <Form layout="vertical" onFinish={submitHandler}>
-          <h1>Login Form</h1>
-          <Form.Item label="Email" name="email">
-            <Input type="email" />
-          </Form.Item>
-          <Form.Item label="Password" name="password">
-            <Input type="password" />
-          </Form.Item>
-          <div className="d-flex justify-content-between">
-            <Link to="/register">Not a user ? Click here to register</Link>
-            <button className="btn btn-primary">Login</button>
+        <div className="row container">
+          <h1>Expense Management System</h1>
+          <div className="col-md-6 login-img">
+            <img src={img} alt="login pic" width={"100%"} height={"100%"} />
           </div>
-        </Form>
+          <div className="col-md-4 login-form">
+            <Form layout="vertical" onFinish={submitHandler}>
+              <h2>Login Form</h2>
+              <Form.Item label="Email" name="email">
+                <Input type="email" required />
+              </Form.Item>
+              <Form.Item label="Password" name="password">
+                <Input type="password" required />
+              </Form.Item>
+              <div className="d-flex justify-content-between">
+                <Link to="/register">Not a user ? Click here to register</Link>
+                <button className="btn">Login</button>
+              </div>
+            </Form>
+          </div>
+        </div>
       </div>
     </>
   );

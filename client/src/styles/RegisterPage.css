@@ -3,7 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  background-image: linear-gradient(
+    to right,
+    #c6ffdd,
+    #fbd786,
+    hsl(358, 89%, 72%)
+  );
 }
 .register-form {
   width: 30vw;
