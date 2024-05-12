@@ -25,6 +25,8 @@ app.use("/api/v1/users", require("./routes/userRoute"));
 // transactions routes
 app.use("/api/v1/transactions", require("./routes/transactionRoute"));
 
+app.use("/api", require("./routes/chatRoute"));
+
 // static files
 app.use(express.static(path.join(__dirname, "./client/build")));
 
