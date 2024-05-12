@@ -7,4 +7,4 @@ ChatRoute.post("/chat", chatComplete);
 
 ChatRoute.get("/token", getToken);
 
-export default ChatRoute;
+module.exports = ChatRoute;

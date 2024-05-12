@@ -1,6 +1,6 @@
 const Anthropic = require("@anthropic-ai/sdk");
 const axios = require("axios");
-export const chatComplete = async (req, res) => {
+const chatComplete = async (req, res) => {
   const { lang, message, apiKey } = req.body;
   const anthropic = new Anthropic({
     apiKey: apiKey, // defaults to process.env["ANTHROPIC_API_KEY"]
@@ -34,7 +34,7 @@ export const chatComplete = async (req, res) => {
   }
 };
 
-export const getToken = async (req, res) => {
+const getToken = async (req, res) => {
   const { url } = req.query;
   console.log(req.params, req.query, typeof url, `${url}`);
   const jwtCloudFunctionURL = "https://getjwttoken-fkt6vl2lgq-uc.a.run.app";
@@ -56,4 +56,9 @@ export const getToken = async (req, res) => {
       message: error,
     });
   }
+};
+
+module.exports = {
+  getToken,
+  chatComplete,
 };
