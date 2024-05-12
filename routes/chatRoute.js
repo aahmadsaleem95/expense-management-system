@@ -1,5 +1,5 @@
-import express from "express";
-import { chatComplete, getToken } from "../controller/chatController";
+const express = require("express");
+const { chatComplete, getToken } = require("../controller/chatController");
 
 const ChatRoute = express.Router();
 

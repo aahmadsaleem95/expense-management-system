@@ -1,5 +1,5 @@
-import Anthropic from "@anthropic-ai/sdk";
-import axios from "axios";
+const Anthropic = require("@anthropic-ai/sdk");
+const axios = require("axios");
 export const chatComplete = async (req, res) => {
   const { lang, message, apiKey } = req.body;
   const anthropic = new Anthropic({
